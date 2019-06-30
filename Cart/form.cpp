@@ -7,8 +7,8 @@ Form::Form(MainWindow *anafrm, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    sorgu1 = new QSqlQuery(anafrm->db) ;
-    genel1 = new QSqlQuery(anafrm->db) ;
+    query1 = new QSqlQuery(anafrm->db) ;
+    general1 = new QSqlQuery(anafrm->db) ;
     model1 = new QSqlQueryModel() ;
 
     list() ;
@@ -21,17 +21,17 @@ Form::~Form()
 
 void Form::list()
 {
-    if(!sorgu1->exec("select * from sepet"))
+    if(!query1->exec("select * from cart"))
     {
-        QMessageBox::critical(this,"Sorgu Hatasi",sorgu1->lastError().text());
+        QMessageBox::critical(this,"Query Error",query1->lastError().text());
     }
 
 
-    sorgu1->exec("select sum(tutar) from sepet") ;
-    model1->setQuery(*sorgu1);
+    query1->exec("select sum(result) from cart") ;
+    model1->setQuery(*query1);
     ui->price->setText(model1->index(0,0).data().toString());
-    sorgu1->exec("select * from sepet") ;
-    model1->setQuery(*sorgu1);
+    query1->exec("select * from cart") ;
+    model1->setQuery(*query1);
     ui->tableView2->setModel(model1);
 
 }
@@ -44,12 +44,12 @@ void Form::on_tableView2_clicked(const QModelIndex &index)
 
 void Form::on_dele_clicked()
 {
-    genel1->prepare("delete from sepet where sepetid = ?") ;
-    genel1->addBindValue(numin) ;
+    general1->prepare("delete from cart where cartid = ?") ;
+    general1->addBindValue(numin) ;
 
-    if(! genel1->exec())
+    if(! general1->exec())
     {
-        QMessageBox::critical(this,"delete problem",genel1->lastError().text()) ;
+        QMessageBox::critical(this,"delete problem",general1->lastError().text()) ;
 
     }
 

@@ -33,7 +33,7 @@ private slots:
 private:
     Ui::Form *ui; 
 
-    QSqlQuery *sorgu1 , *genel1 ;
+    QSqlQuery *query1 , *general1 ;
     QSqlQueryModel *model1 ;
     QString numin ; // index
 };

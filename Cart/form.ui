@@ -32,16 +32,19 @@
      <height>60</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
    <property name="text">
-    <string>Seçili Ürünü Çıkart</string>
+    <string>Delete</string>
    </property>
   </widget>
   <widget class="QLabel" name="price_info">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>300</x>
      <y>450</y>
-     <width>150</width>
+     <width>300</width>
      <height>35</height>
     </rect>
    </property>
@@ -50,7 +53,7 @@
 color:rgb(170, 0, 0) ;</string>
    </property>
    <property name="text">
-    <string> TUTAR</string>
+    <string>TOTAL PRİCE</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

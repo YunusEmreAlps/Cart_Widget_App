@@ -24,20 +24,20 @@
      </rect>
     </property>
     <property name="text">
-     <string>Sepete Ekle</string>
+     <string>Add Cart</string>
     </property>
    </widget>
    <widget class="QPushButton" name="list_info">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>160</y>
+      <x>260</x>
+      <y>200</y>
       <width>100</width>
       <height>30</height>
      </rect>
     </property>
     <property name="text">
-     <string>Ürünleri Listele</string>
+     <string>List Products</string>
     </property>
    </widget>
    <widget class="QPushButton" name="Box">
@@ -50,7 +50,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Sepetim</string>
+     <string>My Cart</string>
     </property>
    </widget>
    <widget class="QTableView" name="tableView">
@@ -83,7 +83,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Ürün Adet</string>
+     <string>Number of Product</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

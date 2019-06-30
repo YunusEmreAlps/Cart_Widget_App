@@ -42,7 +42,7 @@ private:
 
     // database process (list, add, update, delete)
 
-    QSqlQuery *sorgu , *genel ;
+    QSqlQuery *query , *general ;
     QSqlQueryModel *model ;
 
 

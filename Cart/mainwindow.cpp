@@ -9,15 +9,15 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     db = QSqlDatabase :: addDatabase("QSQLITE") ;
-    db.setDatabaseName("C:/Users/Dell/Desktop/Qt-SQL/17010011005_YunusEmreAlpu/YunusEmreAlpu/database.db") ; // database file extension
+    db.setDatabaseName("C:/Users/Dell/Desktop/Git_Qt/4. ) Cart_Widget_App/Cart/database.db") ; // database file extension
 
     if(! db.open())
     {
         QMessageBox::critical(this,"database connection error",db.lastError().text()) ;
     }
 
-    sorgu = new QSqlQuery(db) ;
-    genel = new QSqlQuery(db) ;
+    query = new QSqlQuery(db) ;
+    general = new QSqlQuery(db) ;
     model = new QSqlQueryModel() ;
 
 }
@@ -30,12 +30,12 @@ MainWindow::~MainWindow()
 // list information
 void MainWindow::on_list_info_clicked()
 {
-    if(! sorgu->exec("select * from urunler")) // !! database table name
+    if(! query->exec("select * from products")) // !! database table name
     {
-        QMessageBox::critical(this,"database connection error",sorgu->lastError().text()) ;
+        QMessageBox::critical(this,"database connection error",query->lastError().text()) ;
     }
 
-    model->setQuery(*sorgu) ;
+    model->setQuery(*query) ;
     ui->tableView->setModel(model); // change tableview name
 }
 
@@ -57,11 +57,11 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 // add information
 void MainWindow::on_add_clicked()
 {
-    genel ->prepare(" insert into sepet values(?,?,?,?,?)") ; // database table name
+    general ->prepare(" insert into cart values(?,?,?,?,?)") ; // database table name
 
-    genel ->addBindValue(num)  ;
-    genel ->addBindValue(num2) ;
-    genel ->addBindValue(num3) ;
+    general ->addBindValue(num)  ;
+    general ->addBindValue(num2) ;
+    general ->addBindValue(num3) ;
 
     if(num4 < 1)
     {
@@ -69,14 +69,14 @@ void MainWindow::on_add_clicked()
 
         ui->Adet->setText("1") ;
     }
-    genel ->addBindValue(num4) ;
+    general ->addBindValue(num4) ;
 
-    genel ->addBindValue(num3*num4) ;
+    general ->addBindValue(num3*num4) ;
 
 
-    if(! genel->exec())
+    if(! general->exec())
     {
-        QMessageBox::critical(this,"add problem",genel->lastError().text()) ;
+        QMessageBox::critical(this,"add problem",general->lastError().text()) ;
     }
 
     // list() ;
