@@ -3,13 +3,15 @@
 #include <QTableWidget>
 #include "Form.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     db = QSqlDatabase :: addDatabase("QSQLITE") ;
-    db.setDatabaseName("C:/Users/Dell/Desktop/Git_Qt/4. ) Cart_Widget_App/Cart/database.db") ; // database file extension
+    db.setDatabaseName("C:/Users/Dell/Desktop/Git_Qt/5. ) Cart_Widget_App/Cart/database.db") ; // database file extension
 
     if(! db.open())
     {
@@ -112,9 +114,3 @@ void MainWindow::on_Box_clicked()
     Form *sep = new Form(this);
     sep->show();
 }
-
-
-
-
-
-

@@ -12,6 +12,7 @@ Form::Form(MainWindow *anafrm, QWidget *parent) :
     model1 = new QSqlQueryModel() ;
 
     list() ;
+
 }
 
 Form::~Form()
@@ -55,4 +56,3 @@ void Form::on_dele_clicked()
 
     list() ;
 }
-

@@ -39,6 +39,8 @@ private slots:
 
     void on_Box_clicked();
 
+
+
 private:
     Ui::MainWindow *ui;
 
@@ -49,6 +51,7 @@ private:
 
 
     QString ch ;
+
 };
 
 #endif // MAINWINDOW_H

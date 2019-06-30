@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-06-10T17:54:56
+# Project created by QtCreator 2019-06-30T19:46:01
 #
 #-------------------------------------------------
 
@@ -9,7 +9,7 @@ QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = YunusEmreAlpu
+TARGET = Cart
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use

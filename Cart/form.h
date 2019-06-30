@@ -9,7 +9,6 @@
 #include <QMessageBox>
 #include <QSqlError>
 
-
 namespace Ui {
 class Form;
 }
@@ -30,12 +29,15 @@ private slots:
 
     void on_tableView2_clicked(const QModelIndex &index);
 
+
+
 private:
-    Ui::Form *ui; 
+    Ui::Form *ui;
 
     QSqlQuery *query1 , *general1 ;
     QSqlQueryModel *model1 ;
     QString numin ; // index
+
 };
 
 #endif // FORM_H

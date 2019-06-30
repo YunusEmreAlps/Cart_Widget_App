@@ -6,44 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1259</width>
-    <height>567</height>
+    <width>1278</width>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTableView" name="tableView2">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>100</y>
-     <width>500</width>
-     <height>300</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="dele">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>270</y>
-     <width>200</width>
-     <height>60</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
-   </property>
-   <property name="text">
-    <string>Delete</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="price_info">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>450</y>
+     <x>420</x>
+     <y>390</y>
      <width>300</width>
      <height>35</height>
     </rect>
@@ -62,8 +36,8 @@ color:rgb(170, 0, 0) ;</string>
   <widget class="QLabel" name="price">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>450</y>
+     <x>780</x>
+     <y>390</y>
      <width>150</width>
      <height>35</height>
     </rect>
@@ -77,6 +51,32 @@ color:rgb(170, 0, 0) ;</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="dele">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>210</y>
+     <width>200</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 24pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView2">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>40</y>
+     <width>500</width>
+     <height>300</height>
+    </rect>
    </property>
   </widget>
  </widget>
