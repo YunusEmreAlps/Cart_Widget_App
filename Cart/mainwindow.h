@@ -27,6 +27,8 @@ public:
 
     int num3 , num4 ;
 
+    int control = 0 ; // false
+
 private slots:
 
     void on_list_info_clicked();

@@ -43,13 +43,17 @@ void MainWindow::on_list_info_clicked()
 // this function important for delete and update
 void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
+    num = 1 ;
+    num2 = 1 ;
+    num4 = 1 ;
+
     num =  model->index(index.row(),0).data().toString() ;
     num2 = model->index(index.row(),2).data().toString() ;
     num3 = model->index(index.row(),3).data().toInt() ;
 
     num4 = ui->Adet->text().toInt();
 
-
+    control = 1 ;
 
 }
 
@@ -57,27 +61,48 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 // add information
 void MainWindow::on_add_clicked()
 {
-    general ->prepare(" insert into cart values(?,?,?,?,?)") ; // database table name
 
-    general ->addBindValue(num)  ;
-    general ->addBindValue(num2) ;
-    general ->addBindValue(num3) ;
-
-    if(num4 < 1)
+    if(control == 1)
     {
-        num4 = 1 ;
 
-        ui->Adet->setText("1") ;
+        general ->prepare(" insert into cart values(?,?,?,?,?)") ; // database table name
+
+        general ->addBindValue(num)  ;
+        general ->addBindValue(num2) ;
+
+        if(num3 > 10000)
+        {
+            num3 = 1 ;
+        }
+
+        general ->addBindValue(num3) ;
+
+        if((num4 < 1)||(num4 > 30))
+        {
+            num4 = 1 ;
+
+            ui->Adet->setText("1") ;
+        }
+        general ->addBindValue(num4) ;
+
+        general ->addBindValue(num3*num4) ;
+
+
+        if(! general->exec())
+        {
+            QMessageBox::critical(this,"add problem",general->lastError().text()) ;
+        }
+
+
     }
-    general ->addBindValue(num4) ;
 
-    general ->addBindValue(num3*num4) ;
+    else {
 
+        QMessageBox::critical(this,"Error","Please choose  product") ;
 
-    if(! general->exec())
-    {
-        QMessageBox::critical(this,"add problem",general->lastError().text()) ;
     }
+
+    control = 0 ;
 
     // list() ;
 }
